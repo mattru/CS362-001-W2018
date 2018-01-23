@@ -121,7 +121,7 @@ public class Appt implements  Comparable<Appt>{
             	if(startDay<1 || startDay>NumDaysInMonth)
             		this.valid=false;
             	else
-                	if(startMonth<1 || startMonth>11)
+                	if(startMonth<1 || startMonth>12)
                 		this.valid=false;
                 	else
                 		this.valid=true;

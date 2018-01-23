@@ -48,10 +48,6 @@ public class TimeTable {
 	            calDays.add(new CalDay(nextDay));
 	            nextDay.add(nextDay.DAY_OF_MONTH, 1);
 	        }
-	        while (nextDay.equals(lastDay)) {
-	        	calDays.add(new CalDay(nextDay));
-	            nextDay.add(nextDay.DAY_OF_MONTH, 1);
-	        }
 	        
 	        //Retrieve the appts - <appt> 
 		for (int i = 0; i < appts.size(); i++) {

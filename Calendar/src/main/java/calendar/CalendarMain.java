@@ -34,14 +34,14 @@ public class CalendarMain {
     	Calendar rightnow = Calendar.getInstance();
     	//current month/year/date is today
     	thisMonth = rightnow.get(Calendar.MONTH)+1;
-		thisYear = rightnow.get(Calendar.YEAR)+1;
-		thisDay = rightnow.get(Calendar.DAY_OF_MONTH)+1;
+		thisYear = rightnow.get(Calendar.YEAR);
+		thisDay = rightnow.get(Calendar.DAY_OF_MONTH);
 		
 		 int startHour=15;
 		 int startMinute=30;
 		 int startDay=thisDay+1;  	
-		 int startMonth=thisMonth+1; 	
-		 int startYear=thisYear+1; 	
+		 int startMonth=thisMonth; 	
+		 int startYear=thisYear; 	
 		 String title="Birthday Party";
 		 String description="This is my birthday party.";
 		 //Construct a new Appointment object with the initial data	 
