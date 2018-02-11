@@ -35,13 +35,18 @@ public class ApptTest {
 		 assertEquals(01, appt.getStartMonth());
 		 assertEquals(2018, appt.getStartYear());
 		 assertEquals("Birthday Party", appt.getTitle());
-		 assertEquals("This is my birthday party.", appt.getDescription());         		
-	 }
-
-	 @Test
-	  public void test02()  throws Throwable  {
+		 assertEquals("This is my birthday party.", appt.getDescription()); 
 		 
+		 appt.setStartHour(24); assertFalse(appt.getValid()); appt.setStartHour(21); 
+		 appt.setStartMinute(70); assertFalse(appt.getValid()); appt.setStartMinute(30);
+		 appt.setStartDay(-1); assertFalse(appt.getValid()); appt.setStartDay(15);
+		 appt.setStartYear(-1); assertTrue(appt.getValid()); appt.setStartYear(2018);
+		 appt.setTitle(null); assertTrue(appt.getValid()); appt.setTitle("Birthday Party");
+		 appt.setDescription(null); assertTrue(appt.getValid()); appt.setDescription("This is my birthday party.");
+		 appt.toString();
+		 appt.setStartHour(30); assertNull(appt.toString()); appt.setStartHour(21); 
+		 assertEquals(0, appt.compareTo(appt)); //self comparison results in no difference
+		 
+		 appt.setStartMonth(12); assertTrue(appt.getValid()); appt.setStartMonth(01); //caught valid month being invalid
 	 }
-//add more unit tests as you needed
-	
 }

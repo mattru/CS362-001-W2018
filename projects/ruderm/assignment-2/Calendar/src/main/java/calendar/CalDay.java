@@ -55,9 +55,9 @@ public class CalDay {
 		int month = cal.get(cal.MONTH);
 		int year = cal.get(cal.YEAR);
 	
-		setDay(day);
-		setMonth(month);
-		setYear(year);
+		setDay(day++);
+		setMonth(month++);
+		setYear(year++);
 	
 		setAppts(new LinkedList<Appt>());
 	
