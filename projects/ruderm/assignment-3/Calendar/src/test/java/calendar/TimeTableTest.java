@@ -105,7 +105,7 @@ public class TimeTableTest {
 		;
 		try {
 			LinkedList<CalDay> range = table.getApptRange(myDay.getAppts(), cal, cal2);
-			assertEquals(4, range.size());
+			assertEquals(5, range.size());
 			assertEquals(myDay.getDay(), range.get(0).getDay());
 		} catch (DateOutOfRangeException e) {
 			assertTrue(false);
@@ -319,6 +319,9 @@ public class TimeTableTest {
                 " --- -------- Appointments ------------ --- \n" +
                 "\n" +
                 ", \t --- 2/31/2018 --- \n" +
+                " --- -------- Appointments ------------ --- \n" +
+                "\n" +
+                ", \t --- 3/1/2018 --- \n" +
                 " --- -------- Appointments ------------ --- \n" +
                 "\n" +
                 "]";

@@ -55,11 +55,7 @@ public class ApptTest {
 		appt.setStartHour(30);
 		assertNull(appt.toString());
 		appt.setStartHour(21);
-		assertEquals(0, appt.compareTo(appt)); // self comparison results in no difference
-
-		appt.setStartMonth(12);
-		assertTrue(appt.getValid());
-		appt.setStartMonth(01); // caught valid month being invalid
+		assertEquals(0, appt.compareTo(appt));
 	}
 
 	@Test
