@@ -207,7 +207,7 @@ protected void setUp() {
                                new ResultPair("http:", false),
                                new ResultPair("http/", false),
                                new ResultPair("://", false),
-                               new ResultPair("", true)};
+                               new ResultPair("", true)}; //4/9
 
    ResultPair[] testUrlAuthority = {new ResultPair("www.google.com", true),
                                   new ResultPair("go.com", true),
@@ -226,7 +226,7 @@ protected void setUp() {
                                   new ResultPair("aaa.", false),
                                   new ResultPair(".aaa", false),
                                   new ResultPair("aaa", false),
-                                  new ResultPair("", false)
+                                  new ResultPair("", false) //6/18
    };
    ResultPair[] testUrlPort = {new ResultPair(":80", true),
                              new ResultPair(":65535", true),
@@ -234,7 +234,7 @@ protected void setUp() {
                              new ResultPair("", true),
                              new ResultPair(":-1", false),
                             new ResultPair(":65636",false),
-                             new ResultPair(":65a", false)
+                             new ResultPair(":65a", false) //4/7
    };
    ResultPair[] testPath = {new ResultPair("/test1", true),
                           new ResultPair("/t123", true),
@@ -245,7 +245,7 @@ protected void setUp() {
                           new ResultPair("", true),
                           new ResultPair("/test1/file", true),
                           new ResultPair("/..//file", false),
-                          new ResultPair("/test1//file", false)
+                          new ResultPair("/test1//file", false) //6/10
    };
    //Test allow2slash, noFragment
    ResultPair[] testUrlPathOptions = {new ResultPair("/test1", true),
@@ -262,12 +262,12 @@ protected void setUp() {
                                     new ResultPair("/../file", false),
                                     new ResultPair("/..//file", false),
                                     new ResultPair("/test1//file", true),
-                                    new ResultPair("/#/file", false)
+                                    new ResultPair("/#/file", false) //9/15
    };
 
    ResultPair[] testUrlQuery = {new ResultPair("?action=view", true),
                               new ResultPair("?action=edit&mode=up", true),
-                              new ResultPair("", true)
+                              new ResultPair("", true) //3/3
    };
 
    Object[] testUrlParts = {testUrlScheme, testUrlAuthority, testUrlPort, testPath, testUrlQuery};
