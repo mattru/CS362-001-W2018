@@ -67,8 +67,8 @@ public class ApptRandomTest {
 				
 				 int startHour=ValuesGenerator.RandInt(random);
 				 int startMinute=ValuesGenerator.RandInt(random);
-				 int startDay=ValuesGenerator.RandInt(random);
-				 int startMonth=ValuesGenerator.getRandomIntBetween(random, 1, 12);
+				 int startDay=ValuesGenerator.RandInt(random);;
+				 int startMonth=ValuesGenerator.getRandomIntBetween(random, 1, 11);
 				 int startYear=ValuesGenerator.RandInt(random);
 				 String title="Birthday Party";
 				 String description="This is my birthday party.";
@@ -82,16 +82,6 @@ public class ApptRandomTest {
 				         description);
 			 if(!appt.getValid())continue;
 			for (int i = 0; i < NUM_TESTS; i++) {
-				int nextHour=ValuesGenerator.getRandomIntBetween(random, -1, 14);
-				int nextMinute=ValuesGenerator.getRandomIntBetween(random, -1, 63);
-				int nextDay=ValuesGenerator.getRandomIntBetween(random, -1, 40);
-				//int nextMonth=ValuesGenerator.getRandomIntBetween(random, -1, 20);
-					
-					
-					appt.setStartHour(nextHour);
-					appt.setStartMinute(nextMinute);
-					appt.setStartDay(nextDay);
-					//appt.setStartMonth(nextMonth);
 					String methodName = ApptRandomTest.RandomSelectMethod(random);
 					   if (methodName.equals("setTitle")){
 						   String newTitle=(String) ValuesGenerator.getString(random);
@@ -104,7 +94,6 @@ public class ApptRandomTest {
 						   int recurIncrement = ValuesGenerator.RandInt(random);
 						   int recurNumber=ApptRandomTest.RandomSelectRecurForEverNever(random);
 						   appt.setRecurrence(recurDays, recur, recurIncrement, recurNumber);
-						   appt.setRecurrence(null, recur, recurIncrement, recurNumber);
 						}				
 				}
 				
@@ -114,8 +103,6 @@ public class ApptRandomTest {
 			 
 			}
 		}catch(NullPointerException e){
-			
-		}catch(IndexOutOfBoundsException e){
 			
 		}
 	 
