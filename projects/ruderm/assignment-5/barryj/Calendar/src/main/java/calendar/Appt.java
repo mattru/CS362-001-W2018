@@ -110,7 +110,7 @@ public class Appt implements  Comparable<Appt>{
      * @sets valid to true if the appointment is valid
      */
     private void isValid() {
-    	int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth-1);
+    	int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth);
     				
     	if(startHour<0 || startHour>23)
     		this.valid=false;
@@ -318,3 +318,4 @@ public class Appt implements  Comparable<Appt>{
 
 
 }
+
