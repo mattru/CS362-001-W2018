@@ -1,0 +1,14 @@
+--Appt.java--
+Bug Found: Month cannot exceed 12.
+Source: isValid() --> int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth),
+	startMonth of CalendarUtil must be 0-11, the bug changed startMonth to 1-12. 
+	Entering in 12 breaks test.
+Method: TimeTableTest --> test03
+Description: Failed to create a new appointment when month was changed to 12.
+
+--CalendarUtil.java--
+Bug Found: Leap year is not properly executed.
+Source: IsLeapYear(int year) --> entering in an improper value does not return false
+Method: CalDayTest --> testIsLeapYear
+Description: Failed to assert false for year 300.
+
